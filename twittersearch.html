@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="Twitter">
+<script src="http://code.angularjs.org/angular-1.0.0rc4.min.js"></script>
+<script src="http://code.angularjs.org/angular-resource-1.0.0rc4.min.js"></script>
+
+<script src="twittersearch.js"></script>
+<link rel="stylesheet" href="bootstrap.min.css">
+
+<style type="text/css">
+<!--
+body {font-family: arial;
+font-size: 1em;
+}
+#user {
+	color: #900;
+	font-weight: bold;
+}
+#date {
+	color: #999;
+	font-size: 0.5em;
+}
+</style>
+<body>
+<div ng-controller="TwitterCtrl">
+  <form>
+    <input type="text" ng-model="keyword">
+    <button ng-click="search()">Search</button>
+  </form>
+  <table class="table table-striped">
+    <tr ng-repeat="tweet in twitterResult.results">
+      <td>{{tweet.text}} <span id="user">@{{tweet.from_user}}</span> <span id="date">{{tweet.created_at}}</span></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
