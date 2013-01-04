@@ -4,6 +4,7 @@ function TwitterCtrl($scope, $http) {
 	$scope.tweets = []
 	$scope.tweet_ids = [];
 	$scope.refresh_timeout = false;
+	$scope.limit = 10;
 
 	$scope.search = function () {
 		$scope.tweets = [];
