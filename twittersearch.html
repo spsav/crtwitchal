@@ -27,7 +27,7 @@ font-size: 1em;
     <button ng-click="search()">Search</button>
   </form>
   <table class="table table-striped">
-    <tr ng-repeat="tweet in twitterResult.results">
+    <tr ng-repeat="tweet in tweets">
       <td>{{tweet.text}} <span id="user">@{{tweet.from_user}}</span> <span id="date">{{tweet.created_at}}</span></td>
     </tr>
   </table>
